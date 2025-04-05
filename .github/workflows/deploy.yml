@@ -33,4 +33,4 @@ jobs:
 
       - name: Push Docker image to ACR
         run: |
-          docker push ${{ secrets.ACR_LOGIN_SERVER }}/${{ secrets.ACR_REPOSITORY }}:${{ secrets.IMAGE_TAG }}
+          docker push simpleapptest.azurecr.io/simple-node-app:latest

@@ -22,6 +22,11 @@ jobs:
         run: |
           az acr login --name ${{ secrets.ACR_LOGIN_SERVER }}
 
+      - name: Check current directory
+        run: |
+          echo "Current directory: $(pwd)"
+          ls -alh  # List files and directories to check if Dockerfile exists
+
       - name: Build Docker image
         run: |
           docker build -t ${{ secrets.ACR_LOGIN_SERVER }}/${{ secrets.ACR_REPOSITORY }}:${{ secrets.IMAGE_TAG }} .

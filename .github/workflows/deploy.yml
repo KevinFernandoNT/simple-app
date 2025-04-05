@@ -34,3 +34,7 @@ jobs:
       - name: Push Docker image to ACR
         run: |
           docker push simpleapptest.azurecr.io/simple-node-app:latest
+
+      - name: Redeploy Azure Container Instance
+        run: |
+          az container restart --name simple-node-test-application --resource-group kevins-personal-rg
